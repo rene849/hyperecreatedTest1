@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECON-INR_M1_interactive_infographic_WYA-Update</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link href='https://fonts.googleapis.com/css?family=Noto+Sans:400,700&display=swap' rel='stylesheet' type='text/css'>
+
+    <style>
+        body {
+            font-family: 'Noto Sans', sans-serif;
+            background-color: #ffffff;
+        }
+
+        /* --- Global & Scrollbar Utilities --- */
+        .page-view { transition: opacity 0.3s ease-in-out; }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background-color: #cbd5e1; border-radius: 3px; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .fade-transition { transition: opacity 0.3s ease-in-out; }
+        
+        /* Mobile Accordion Smooth Reveal */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-down {
+            animation: fadeInDown 0.35s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-800 antialiased selection:bg-red-100 overflow-x-hidden">
+
+    <header id="top-nav" class="hidden fixed top-0 left-0 right-0 bg-white border-b border-slate-200 z-40 flex justify-center">
+        <div class="w-full max-w-6xl h-16 px-4 sm:px-10 flex items-center justify-between">
+            <div class="flex items-center h-full py-2">
+                <div class="bg-[#E3120B] h-full flex flex-col justify-center px-3 mr-4 select-none">
+                    <span class="text-white font-bold text-[10px] leading-tight tracking-widest uppercase">ECONOMIST</span>
+                    <span class="text-white font-bold text-[10px] leading-tight tracking-widest uppercase">EDUCATION</span>
+                </div>
+                <div class="h-8 border-l border-slate-300 mr-4 hidden sm:block"></div>
+                <span class="text-[14px] text-slate-700 font-semibold hidden sm:inline select-none">The lead-up to the US-China rivalry</span>
+            </div>
+            
+            <div class="flex items-center space-x-2 sm:space-x-3 text-[#2E45B8]">
+                <button onclick="navigateTo('cover-view')" class="w-8 h-8 flex items-center justify-center border border-[#2E45B8] rounded-full hover:bg-slate-50 transition cursor-pointer outline-none" title="Timeline Home"><i class="fa-solid fa-house text-xs"></i></button>
+                <button onclick="toggleModal('bib-modal', true)" class="w-8 h-8 flex items-center justify-center border border-[#2E45B8] rounded-full hover:bg-slate-50 transition cursor-pointer outline-none" title="Bibliography"><i class="fa-solid fa-book-open text-xs"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main class="w-full min-h-screen flex flex-col relative">
+        
+        <section id="cover-view" class="page-view absolute inset-0 w-full h-full flex flex-col justify-center max-w-6xl mx-auto px-6 sm:px-12">
+            <div class="absolute top-12 left-6 sm:left-12 z-20">
+                <img src="ECON-INR_M1_interactive_infographic_WYA-Update.hyperesources/Economist_Education_2x.jpg" alt="Economist Education Logo" class="h-10 sm:h-12 w-auto object-contain select-none">
+            </div>
+
+            <div class="w-full flex flex-col md:flex-row items-center relative z-10 mt-12">
+                <div class="w-full md:w-1/2 space-y-8 pr-0 md:pr-4 z-20">
+                    <h1 class="text-[40px] sm:text-[48px] font-bold text-slate-900 leading-[1.1] tracking-tight">
+                        The lead-up to the<br>US-China rivalry
+                    </h1>
+                    <div>
+                        <button onclick="navigateTo('timeline-view')" class="bg-[#2E45B8] hover:bg-blue-800 text-white font-bold text-sm px-12 py-3.5 rounded shadow-sm transition-colors cursor-pointer select-none">
+                            Start
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="hidden md:block absolute right-0 w-[55%] max-w-[600px] aspect-[249/192] z-10">
+                    <div class="absolute inset-0">
+                        <svg width="100%" height="100%" viewBox="0 0 249 192" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+                            <path d="M116.00 1.00 C 116.00 11.00, 124.00 11.00, 124.00 11.00 L 181.39 11.00 C 181.39 11.00, 193.13 11.00, 193.13 22.72 C 193.13 34.44, 183.25 33.82, 181.39 33.82 C 142.48 33.82, 98.59 33.82, 63.38 33.82 C 57.82 33.82, 46.08 35.67, 46.08 51.70 C 46.08 67.74, 59.67 68.36, 62.76 68.36 C 106.00 68.36, 154.71 68.36, 204.13 68.36 C 207.84 68.36, 229.46 68.36, 229.46 94.26 C 229.46 120.16, 204.13 120.16, 204.13 120.16 C 204.13 120.16, 97.55 120.16, 35.16 120.16 C 28.37 120.16, 1.80 122.63, 1.80 154.70 C 1.80 186.77, 27.13 190.47, 35.16 190.47 C 117.94 190.47, 248.00 191.00, 248.00 191.00" stroke="#2E45B8" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M243.00 186.00 L 247.80 190.98 L 243.00 195.97" stroke="#2E45B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="116" cy="1" r="2.5" fill="#2E45B8" />
+                            <circle cx="193" cy="22" r="2.5" fill="#2E45B8" />
+                            <circle cx="46" cy="51" r="2.5" fill="#2E45B8" />
+                            <circle cx="229" cy="94" r="2.5" fill="#2E45B8" />
+                            <circle cx="1" cy="154" r="2.5" fill="#2E45B8" />
+                        </svg>
+                    </div>
+                    <img src="ECON-INR_M1_interactive_infographic_WYA-Update.hyperesources/PastedVector-2.svg" class="absolute w-[22%] h-auto z-10" style="left: 46.58%; top: 0.52%;" alt="China Map">
+                    <img src="ECON-INR_M1_interactive_infographic_WYA-Update.hyperesources/PastedVector-3.svg" class="absolute w-[16%] h-auto z-10" style="left: 77.56%; top: 11.83%;" alt="Korean Soldier Badge">
+                    <img src="ECON-INR_M1_interactive_infographic_WYA-Update.hyperesources/PastedVector-4.svg" class="absolute w-[24%] h-auto z-10" style="left: 18.50%; top: 26.92%;" alt="Spy Plane">
+                    <img src="ECON-INR_M1_interactive_infographic_WYA-Update.hyperesources/PastedVector-5.svg" class="absolute w-[20%] h-auto z-10" style="left: 92.15%; top: 49.09%;" alt="Soviet Map">
+                    <img src="ECON-INR_M1_interactive_infographic_WYA-Update.hyperesources/PastedVector-6.svg" class="absolute w-[16%] h-auto z-10" style="left: 0.72%; top: 80.57%;" alt="Global Currency Globe">
+                </div>
+            </div>
+        </section>
+
+        <section id="timeline-view" class="page-view hidden max-w-6xl w-full mx-auto pt-20 sm:pt-28 flex-col min-h-screen pb-10 px-4 sm:px-10">
+            
+            <div class="hidden md:flex flex-col flex-grow w-full">
+                <div class="flex flex-row gap-12 items-center min-h-[440px] w-full">
+                    <div class="w-1/2 flex flex-col justify-center fade-transition" id="desktop-text-pane">
+                        <div id="desktop-initial-prompt" class="space-y-6 max-w-lg mb-0">
+                            <p class="text-[19px] text-slate-800 leading-relaxed font-light">
+                                In the preceding decades, various events occurred that culminated in the US-China rivalry.
+                            </p>
+                            <p class="text-[19px] text-slate-800 leading-relaxed font-light">
+                                To understand how the rivalry reached its current state, <strong class="font-bold">click on each event</strong> in the timeline below.
+                            </p>
+                        </div>
+                        
+                        <div id="desktop-event-display" class="hidden flex-col space-y-6 w-full">
+                            <div class="flex flex-row items-baseline space-x-4">
+                                <span id="desktop-event-year" class="text-[2.75rem] font-bold text-[#E3120B] tracking-tight leading-none"></span>
+                                <h2 id="desktop-event-title" class="text-2xl font-bold text-slate-900 leading-tight"></h2>
+                            </div>
+                            <p id="desktop-event-description" class="text-slate-800 text-[15px] leading-relaxed max-h-[340px] overflow-y-auto custom-scrollbar pr-4 text-justify w-full"></p>
+                        </div>
+                    </div>
+
+                    <div class="w-1/2 flex justify-center items-center h-full fade-transition" id="desktop-graphic-pane">
+                        <div id="intro-graphic-animation" class="w-full max-w-sm aspect-[4/3] relative">
+                            <svg width="100%" height="100%" viewBox="0 0 400 240" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute inset-0 overflow-visible">
+                                <path id="rolling-curve" d="M 350,30 L 80,30 A 45,45 0 0,0 35,75 A 45,45 0 0,0 80,120 L 320,120 A 45,45 0 0,1 365,165 A 45,45 0 0,1 320,210 L 50,210" stroke="#E2E8F0" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M 350,30 L 80,30 A 45,45 0 0,0 35,75 A 45,45 0 0,0 80,120 L 320,120 A 45,45 0 0,1 365,165 A 45,45 0 0,1 320,210 L 50,210" stroke="#2E45B8" stroke-width="2" stroke-linecap="round" stroke-dasharray="1500" stroke-dashoffset="1500">
+                                    <animate attributeName="stroke-dashoffset" from="1500" to="0" dur="2.5s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" keyTimes="0; 1"/>
+                                </path>
+                                <path d="M 58,205 L 50,210 L 58,215" stroke="#2E45B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="20" stroke-dashoffset="20">
+                                    <animate attributeName="stroke-dashoffset" from="20" to="0" dur="0.2s" begin="2.3s" fill="freeze"/>
+                                </path>
+                                <circle cx="280" cy="30" r="3.5" fill="#2E45B8" class="opacity-0"><animate attributeName="opacity" to="1" dur="0.2s" begin="0.2s" fill="freeze"/></circle>
+                                <circle cx="120" cy="30" r="3.5" fill="#2E45B8" class="opacity-0"><animate attributeName="opacity" to="1" dur="0.2s" begin="0.6s" fill="freeze"/></circle>
+                                <circle cx="35" cy="75" r="3.5" fill="#2E45B8" class="opacity-0"><animate attributeName="opacity" to="1" dur="0.2s" begin="0.9s" fill="freeze"/></circle>
+                                <circle cx="160" cy="120" r="3.5" fill="#2E45B8" class="opacity-0"><animate attributeName="opacity" to="1" dur="0.2s" begin="1.3s" fill="freeze"/></circle>
+                                <circle cx="280" cy="120" r="3.5" fill="#2E45B8" class="opacity-0"><animate attributeName="opacity" to="1" dur="0.2s" begin="1.6s" fill="freeze"/></circle>
+                                <circle cx="365" cy="165" r="3.5" fill="#2E45B8" class="opacity-0"><animate attributeName="opacity" to="1" dur="0.2s" begin="1.9s" fill="freeze"/></circle>
+                                <circle cx="200" cy="210" r="3.5" fill="#2E45B8" class="opacity-0"><animate attributeName="opacity" to="1" dur="0.2s" begin="2.2s" fill="freeze"/></circle>
+                                <circle r="6" fill="#1b264f" class="drop-shadow-sm">
+                                    <animateMotion dur="2.5s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" keyTimes="0; 1">
+                                        <mpath href="#rolling-curve"/>
+                                    </animateMotion>
+                                </circle>
+                            </svg>
+                        </div>
+                        <div id="desktop-milestone-graphic-wrapper" class="hidden w-full max-w-xs aspect-square flex-col items-center justify-center relative mx-auto">
+                            <img id="desktop-dynamic-svg-asset" src="" class="w-full h-full object-contain" alt="Milestone Visual Asset">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full mt-auto pt-14 flex justify-center overflow-hidden pb-4">
+                    <div class="w-full max-w-5xl flex justify-center">
+                        <div class="min-w-[800px] w-full relative h-16 flex items-start justify-between" id="desktop-timeline-track-container">
+                            <div class="absolute left-0 right-0 h-[1.5px] bg-[#2E45B8] z-0 top-[17px]"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:hidden flex flex-col w-full pb-12">
+                <div id="mobile-initial-prompt" class="space-y-4 mb-8">
+                    <p class="text-[17px] text-slate-800 leading-relaxed font-light">
+                        In the preceding decades, various events occurred that culminated in the US-China rivalry.
+                    </p>
+                    <p class="text-[17px] text-slate-800 leading-relaxed font-light">
+                        To understand how the rivalry reached its current state, <strong class="font-bold">click on each event</strong> in the timeline below.
+                    </p>
+                </div>
+
+                <div id="mobile-accordion-container" class="relative pl-1">
+                    </div>
+            </div>
+
+        </section>
+    </main>
+
+    <div id="bib-modal" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-xl shadow-2xl max-w-3xl w-full max-h-[80vh] flex flex-col">
+            <div class="p-5 border-b border-slate-100 flex items-center justify-between">
+                <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2"><i class="fa-solid fa-book text-[#e3120b]"></i> Bibliography</h3>
+                <button onclick="toggleModal('bib-modal', false)" class="text-slate-400 hover:text-slate-600 transition text-2xl p-1 cursor-pointer leading-none">&times;</button>
+            </div>
+            <div class="p-6 overflow-y-auto custom-scrollbar space-y-4 text-sm text-slate-600 leading-relaxed" id="bibliography-target"></div>
+        </div>
+    </div>
+
+    <script>
+        const milestones = [
+            { id: 1, year: "1949", title: "Establishment of the People’s Republic of China", asset: "PastedVector-29.svg", desc: "After a civil war lasting four years and a social revolution in rural China, Mao Zedong’s Chinese Communist Party conquered mainland China and established the People’s Republic of China (PRC). Its goal was to elevate China’s global status, with a focus on industrialisation. The defeated Republic of China (ROC) government, under the leadership of the Nationalist Party, relocated to the island province of Taiwan and maintained that it was the legitimate government. This led to “two Chinas”: the PRC on the mainland and the ROC on the island of Taiwan. The communist victory led to closer relations between the Soviet Union and the PRC. The US, on the other hand, severed diplomatic ties with the PRC and continued to recognise the ROC as the true government, supporting it holding China’s seat in the UN." },
+            { id: 2, year: "1950", title: "The Korean war", asset: "PastedVector-30.svg", desc: "Since the division of the Korean peninsula in 1945, the Soviet Union supported the ruling communist party in North Korea, while the US was involved in rebuilding South Korea and training its army. Both North and South Korea claimed to be the legitimate government of the whole peninsula. In June 1950, the North Korean People’s Army (KPA), backed by the Soviet Union, invaded South Korea. Answering a call from the UN, the US rushed to South Korea’s defence, with US troops making up the majority of the multinational military force. When the UN Command pushed the KPA north towards the Chinese border, China also joined the war, seeking to drive the UN Command back and unite the peninsula under communist rule. This heightened the hostility between China and the US. The Korean war ended in 1953, with the border between North and South roughly where it had been when the shooting started." },
+            { id: 3, year: "1960", title: "Sino-Soviet split", asset: "PastedVector-31.svg", desc: "After almost a decade of solidarity, relations between China and the Soviet Union started to deteriorate in the late 1950s. Reasons for the Sino-Soviet split included ideological rifts, disagreements over the use of nuclear weapons, competition over leadership of the communist bloc and China’s disastrous industrialisation policy known as the “Great Leap Forward”. This tension culminated in border clashes between the two countries in 1969. With the Soviet Union becoming a threat to China, the stage was set for the resumption of US-China relations." },
+            { id: 4, year: "1971", title: "International reintegration of the PRC", asset: "PastedVector-32.svg", desc: "In 1971, the PRC replaced the ROC (based in Taiwan) as China’s representative to the UN and gained a permanent seat in the UN Security Council. With this formal recognition of the PRC by the UN, other countries started to establish relations with it. Among these was the US, with secretary of state Henry Kissinger visiting China in the same year. The US ping-pong team and accompanying journalists also became some of the first Americans allowed to enter China since 1945." },
+            { id: 5, year: "1972", title: "The Shanghai Communiqué", asset: "PastedVector-33.svg", desc: "During President Richard Nixon’s visit in February 1972, the US and China issued the Shanghai Communiqué, a joint statement aimed at normalising relations between the two countries after 23 years of hostility. While recognising their differences, this statement confirmed their commitment to peaceful coexistence, respect for sovereignty and the development of bilateral trade. It also included mutual opposition to any single country having a hegemony in the Asia-Pacific region—a thinly veiled reference to the Soviet Union. The question of Taiwan was front of mind in the Communiqué, with it being highlighted as the crucial obstruction to the normalisation of relations. The PRC rejected any “two Chinas” formulation, declaring that Taiwan is a province of China and that the government of the PRC was the sole legal government of China. The US, in turn, acknowledged “that all Chinese on either side of the Taiwan Strait maintain there is but one China and that Taiwan is a part of China” (Joint Communiqué of the United States of America and the People's Republic of China, 1972). The US also noted that it intended to remove its military personnel from Taiwan. Although the Shanghai Communiqué was an important milestone, it would take a few years for relations to become normalised." },
+            { id: 6, year: "1979", title: "Official diplomatic relations", asset: "PastedVector-34.svg", desc: "On January 1st 1979, during Jimmy Carter’s presidency, the US and China established official diplomatic relations, with embassies planned to open on March 1st. The US officially recognised the PRC as the sole legal government of China and withdrew diplomatic recognition from the Republic of China (based in Taiwan). The US acknowledged China’s position that Taiwan is part of China but did not go so far as to recognise Chinese sovereignty over Taiwan. This is known as its “One-China policy”. In April 1979, the US Congress approved the Taiwan Relations Act (TRA) to allow for continued economic, military and cultural relations, despite the suspension of diplomatic relations. Each subsequent US administration has reaffirmed its commitment both to the One-China policy and the TRA. Tensions arose in 2016, when President-elect Donald Trump questioned the US’ One-China policy and disregarded established practice by speaking with Taiwanese President Tsai Ing-wen via telephone. Tensions were smoothed over after his inauguration when he reaffirmed the One-China policy in a call with Chinese President Xi Jinping." },
+            { id: 7, year: "1991", title: "Collapse of the Soviet Union", asset: "PastedVector-35.svg", desc: "Following the collapse of the Soviet Union, the US became the dominant superpower in the world. Although the fall of a fellow communist dictatorship perturbed Chinese leaders, with hard-liners using it as a warning against any loosening of the ruling party's grip, Deng Xiaoping (China’s paramount leader from 1978) continued with his programme of economic liberalisation, which eventually allowed hundreds of millions of Chinese to lift themselves out of poverty. Rapid growth raised China's status as a world power." },
+            { id: 8, year: "2000", title: "Normalised trade relations", asset: "PastedVector-36.svg", desc: "In October 2000, President Bill Clinton signed the US-China Relations Act, granting China permanent normal trade relations with the US. This paved the way for China to join the World Trade Organisation in 2001. The US and China became each other’s largest trading partners. However, the US’ imports from China vastly exceeds its exports, leading to a trade deficit that rose from $83m in 2001 to $310bn in 2020." },
+            { id: 9, year: "2001", title: "The spy-plane incident", asset: "PastedVector-37.svg", desc: "On April 1st 2001, the relationship between the US and China was put to the test when a US military surveillance aircraft and a Chinese fighter jet collided over the South China Sea. The Chinese plane crashed into the sea while the damaged US plane made an emergency landing on the southern Chinese island of Hainan. The plane and its crew were subsequently detained by Chinese military authorities, leading to the US being fearful that its state-of-the-art surveillance gear would fall into Chinese hands. Each country had its own version of events and the incident led to a tense and risky deadlock between the US and China that lasted 12 days." },
+            { id: 10, year: "2008", title: "China becomes the US’ largest foreign creditor", asset: "PastedVector-38.svg", desc: "In 2008, as the US economy suffered in the midst of the financial crisis, China surpassed Japan to become the largest foreign holder of US government debt through its purchase of US Treasury securities. This highlighted the growing interdependence between the US and Chinese economies and also raised concerns about the balance of power shifting in China’s favour." },
+            { id: 11, year: "2013", title: "China becomes, by one measure, the world’s largest economy", asset: "PastedVector-39.svg", desc: "China’s continued economic growth reached a milestone in 2013 when it became the world’s largest economy based on purchasing-power parity. This aligned well with China’s new president Xi Jinping’s call for the rejuvenation of the Chinese nation in November 2012." },
+            { id: 12, year: "2015", title: "Tensions in the South China Sea", asset: "PastedVector-40.svg", desc: "The South China Sea, rich in natural gas and a key route for global commercial shipping, has long been a point of dispute. Countries such as China, Vietnam, Malaysia, the Philippines and Taiwan have all laid overlapping claims to its various islets, reefs and economic zones. In 2015, US surveillance pictures showed China rapidly reclaiming land in the South China Sea by pouring sand onto disputed reefs to turn them into islands. This went against a 2002 agreement with the Association of South-East Asian Nations (ASEAN) to exercise self-restraint when it came to territorial disputes in the South China Sea. China seemed to be building airstrips and harbours, and placing military equipment, on this reclaimed land. With tensions in the region rising, and fears over China’s fast-expanding military power growing, the US called for a halt to China’s controversial land reclamation and militarisation of the South China Sea. The US even sent warships close to the Chinese-claimed areas on freedom-of-navigation operations." },
+            { id: 13, year: "2016", title: "The US and China co-operate on climate change", asset: "PastedVector-41.svg", desc: "President Barack Obama and President Xi Jinping joined forces in combating climate change. In 2016, they both consulted with the United Nations secretary-general, Ban Ki-moon, and joined the Paris Agreement; 55 countries were required to join the agreement, representing 55% of the world’s greenhouse-gas emissions, before it could enter into force. The US and China are responsible for almost 39% of the world’s emissions, making their participation particularly significant." },
+            { id: 14, year: "2018", title: "The US-China trade war", asset: "PastedVector-42.svg", desc: "At the start of his presidency, Trump touted that progress was being made with US-China relations. However, in 2018, a trade war erupted when the Trump administration announced sweeping tariffs on imported Chinese products, worth $50bn, in response to China’s alleged intellectual-property theft and unfair industrial policy. China retaliated in kind and accused the US of violating global trading rules. The trade war escalated throughout the next two years, with tit-for-tat tariff increases and accusations of wrongdoing on both sides, as the US opted for competition rather than co-operation." },
+            { id: 15, year: "2020", title: "The covid-19 pandemic & beyond", asset: "PastedVector-43.svg", desc: "After reports of a new coronavirus in the Chinese city of Wuhan, the Trump administration banned all non-citizens who had recently visited mainland China from entering the US. As the covid-19 pandemic spread across the world, the US and China blamed each other for the outbreak. A Chinese foreign-ministry spokesperson baselessly accused the US military of bringing the virus to China; Trump blamed the Chinese government for covering up the initial outbreak and failing to stop the spread of what he called the “Chinese virus”. President Joe Biden inherited a tense relationship with China from the Trump administration, with predictions that his policy towards China will be a mixture of Trump’s and Obama’s. Biden’s secretary of state even said that Trump “was right to take a tougher approach to China” (US Department of State, 2021)." }
+        ];
+
+        const bibliographies = [
+            "A full-blown trade war between America and China looks likely. 2018. <em>The Economist</em>. 23 July.",
+            "A hint of the cold war over the South China Sea. 2001. <em>The Economist</em>. 7 April.",
+            "A wary respect. 2009. <em>The Economist</em>. 24 October.",
+            "Council on Foreign Relations. n.d. <em>U.S. Relations with China: 1949 – 2020</em>.",
+            "Donald Trump’s phone call with Taiwan’s president spreads alarm. 2016. <em>The Economist</em>. 3 December."
+        ];
+
+        function initializeApp() {
+            const desktopTrack = document.getElementById('desktop-timeline-track-container');
+            const mobileAccordion = document.getElementById('mobile-accordion-container');
+            const bibTarget = document.getElementById('bibliography-target');
+
+            milestones.forEach((m, idx) => {
+                // 1. Build Desktop Horizontal Track
+                const dNode = document.createElement('button');
+                dNode.className = "relative z-10 flex flex-col items-center group outline-none select-none cursor-pointer h-16";
+                dNode.onclick = () => selectMilestone(m.id, idx);
+                dNode.innerHTML = `
+                    <div id="circ-d-${m.id}" class="w-[34px] h-[34px] rounded-full border-[1.5px] border-[#2E45B8] bg-white flex items-center justify-center font-bold text-[13px] text-[#2E45B8] transition-all duration-300 group-hover:bg-[#2E45B8] group-hover:text-white">
+                        ${m.id}
+                    </div>
+                    <span id="year-d-${m.id}" class="absolute top-[44px] text-[11px] font-bold text-slate-900 transition-colors whitespace-nowrap">${m.year}</span>
+                `;
+                desktopTrack.appendChild(dNode);
+
+                // 2. Build Mobile Vertical Accordion
+                const mNode = document.createElement('div');
+                mNode.className = "relative flex flex-col mb-4 last:mb-0";
+                mNode.innerHTML = `
+                    ${idx < milestones.length - 1 ? '<div class="absolute left-[16.5px] top-[36px] bottom-[-24px] w-[1.5px] bg-[#2E45B8] z-0"></div>' : ''}
+                    
+                    <button class="relative z-10 flex items-start text-left w-full outline-none" onclick="selectMilestone(${m.id}, ${idx})">
+                        <div id="circ-m-${m.id}" class="shrink-0 w-[34px] h-[34px] rounded-full border-[1.5px] border-[#2E45B8] bg-white flex items-center justify-center font-bold text-[13px] text-[#2E45B8] transition-all duration-300 mt-1">
+                            ${m.id}
+                        </div>
+                        
+                        <div id="short-m-${m.id}" class="ml-4 mt-1">
+                            <div class="text-[17px] font-bold text-slate-900 leading-tight">${m.year}</div>
+                            <div class="text-[15px] text-slate-800 mt-0.5 leading-snug pr-2">${m.title}</div>
+                        </div>
+                    </button>
+
+                    <div id="content-m-${m.id}" class="hidden flex-col mt-4 pl-[50px] pr-2 w-full animate-fade-in-down pb-2">
+                        <img src="ECON-INR_M1_interactive_infographic_WYA-Update.hyperesources/${m.asset}" class="w-full max-w-[280px] mx-auto object-contain mb-6 drop-shadow-sm">
+                        <div class="text-[2rem] font-bold text-[#E3120B] tracking-tight leading-none mb-1">${m.year}</div>
+                        <h2 class="text-[22px] font-bold text-slate-900 leading-tight mb-4">${m.title}</h2>
+                        <p class="text-slate-800 text-[15px] leading-relaxed text-left">${m.desc}</p>
+                    </div>
+                `;
+                mobileAccordion.appendChild(mNode);
+            });
+
+            // 3. Populate Bibliography
+            bibliographies.forEach(b => {
+                const item = document.createElement('p');
+                item.className = "border-b border-slate-100 pb-2 last:border-0 mb-2 last:mb-0";
+                item.innerHTML = b;
+                bibTarget.appendChild(item);
+            });
+        }
+
+        function navigateTo(id) {
+            document.getElementById('cover-view').classList.add('hidden');
+            document.getElementById('timeline-view').classList.add('hidden');
+            document.getElementById('top-nav').classList.add('hidden');
+
+            document.getElementById(id).classList.remove('hidden');
+            
+            // Re-initialize home prompt states
+            if(id === 'timeline-view') {
+                document.getElementById('top-nav').classList.remove('hidden');
+                
+                // Show Desktop prompts
+                document.getElementById('desktop-initial-prompt').classList.remove('hidden');
+                document.getElementById('intro-graphic-animation').classList.remove('hidden');
+                document.getElementById('desktop-event-display').classList.add('hidden');
+                document.getElementById('desktop-event-display').classList.remove('flex');
+                document.getElementById('desktop-milestone-graphic-wrapper').classList.add('hidden');
+                
+                // Show Mobile Prompts
+                document.getElementById('mobile-initial-prompt').classList.remove('hidden');
+
+                // Reset all nodes globally
+                milestones.forEach(item => {
+                    document.getElementById(`circ-d-${item.id}`).className = "w-[34px] h-[34px] rounded-full bg-white border-[1.5px] border-[#2E45B8] flex items-center justify-center font-bold text-[13px] text-[#2E45B8] transition-all duration-300 group-hover:bg-[#2E45B8] group-hover:text-white";
+                    
+                    document.getElementById(`circ-m-${item.id}`).className = "shrink-0 w-[34px] h-[34px] rounded-full bg-white border-[1.5px] border-[#2E45B8] flex items-center justify-center font-bold text-[13px] text-[#2E45B8] transition-all duration-300 mt-1";
+                    document.getElementById(`short-m-${item.id}`).classList.remove('hidden');
+                    document.getElementById(`content-m-${item.id}`).classList.add('hidden');
+                    document.getElementById(`content-m-${item.id}`).classList.remove('flex');
+                });
+            }
+        }
+
+        function toggleModal(id, show) {
+            document.getElementById(id).classList.toggle('hidden', !show);
+        }
+
+        function selectMilestone(id, index) {
+            const m = milestones.find(item => item.id === id);
+            if(!m) return;
+
+            // ==========================================
+            // DESKTOP HANDLING
+            // ==========================================
+            const desktopTextPane = document.getElementById('desktop-text-pane');
+            const desktopGraphicPane = document.getElementById('desktop-graphic-pane');
+
+            desktopTextPane.style.opacity = '0';
+            desktopGraphicPane.style.opacity = '0';
+
+            setTimeout(() => {
+                document.getElementById('desktop-initial-prompt').classList.add('hidden');
+                
+                document.getElementById('desktop-event-display').classList.remove('hidden');
+                document.getElementById('desktop-event-display').classList.add('flex');
+
+                document.getElementById('desktop-event-year').innerText = m.year;
+                document.getElementById('desktop-event-title').innerText = m.title;
+                document.getElementById('desktop-event-description').innerHTML = m.desc;
+
+                document.getElementById('intro-graphic-animation').classList.add('hidden');
+                document.getElementById('desktop-milestone-graphic-wrapper').classList.remove('hidden');
+                document.getElementById('desktop-dynamic-svg-asset').src = `ECON-INR_M1_interactive_infographic_WYA-Update.hyperesources/${m.asset}`;
+
+                desktopTextPane.style.opacity = '1';
+                desktopGraphicPane.style.opacity = '1';
+            }, 300);
+
+            // ==========================================
+            // GLOBAL NODE STYLE UPDATES
+            // ==========================================
+            document.getElementById('mobile-initial-prompt').classList.add('hidden');
+
+            milestones.forEach((item) => {
+                // Desktop Updates
+                const cd = document.getElementById(`circ-d-${item.id}`);
+                if(item.id === id) {
+                    cd.className = "w-[34px] h-[34px] rounded-full bg-[#1b264f] flex items-center justify-center font-bold text-[13px] text-white transition-all duration-300 ring-[2px] ring-[#1DC9A4] ring-offset-[3px]";
+                } else {
+                    cd.className = "w-[34px] h-[34px] rounded-full bg-white border-[1.5px] border-[#2E45B8] flex items-center justify-center font-bold text-[13px] text-[#2E45B8] transition-all duration-300 group-hover:bg-[#2E45B8] group-hover:text-white";
+                }
+
+                // Mobile Accordion Updates
+                const cm = document.getElementById(`circ-m-${item.id}`);
+                const sm = document.getElementById(`short-m-${item.id}`);
+                const contentM = document.getElementById(`content-m-${item.id}`);
+
+                if(item.id === id) {
+                    // Mobile Active Item
+                    cm.className = "shrink-0 w-[34px] h-[34px] rounded-full bg-[#1b264f] flex items-center justify-center font-bold text-[13px] text-white shadow-md transition-all duration-300 ring-[2px] ring-[#1DC9A4] ring-offset-[3px] mt-1";
+                    sm.classList.add('hidden');
+                    contentM.classList.remove('hidden');
+                    contentM.classList.add('flex');
+                } else {
+                    // Mobile Inactive Item
+                    cm.className = "shrink-0 w-[34px] h-[34px] rounded-full bg-white border-[1.5px] border-[#2E45B8] flex items-center justify-center font-bold text-[13px] text-[#2E45B8] transition-all duration-300 mt-1";
+                    sm.classList.remove('hidden');
+                    contentM.classList.add('hidden');
+                    contentM.classList.remove('flex');
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', initializeApp);
+    </script>
+</body>
+</html>
