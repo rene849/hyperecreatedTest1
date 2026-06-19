@@ -38,7 +38,7 @@
     <header id="top-nav" class="hidden fixed top-0 left-0 right-0 bg-white border-b border-slate-200 z-40 flex justify-center">
         <div class="w-full max-w-6xl h-16 px-4 sm:px-10 flex items-center justify-between">
             <div class="flex items-center h-full py-2">
-                <div class="bg-[#E3120B] h-full flex flex-col justify-center px-3 mr-4 select-none">
+                <div class="bg-[#E3120B] h-full flex flex-col justify-center px-3 mr-4 select-none" aria-hidden="true">
                     <span class="text-white font-bold text-[10px] leading-tight tracking-widest uppercase">ECONOMIST</span>
                     <span class="text-white font-bold text-[10px] leading-tight tracking-widest uppercase">EDUCATION</span>
                 </div>
@@ -47,8 +47,12 @@
             </div>
             
             <div class="flex items-center space-x-2 sm:space-x-3 text-[#2E45B8]">
-                <button onclick="navigateTo('cover-view')" class="w-8 h-8 flex items-center justify-center border border-[#2E45B8] rounded-full hover:bg-slate-50 transition cursor-pointer outline-none" title="Timeline Home"><i class="fa-solid fa-house text-xs"></i></button>
-                <button onclick="toggleModal('bib-modal', true)" class="w-8 h-8 flex items-center justify-center border border-[#2E45B8] rounded-full hover:bg-slate-50 transition cursor-pointer outline-none" title="Bibliography"><i class="fa-solid fa-book-open text-xs"></i></button>
+                <button onclick="navigateTo('cover-view')" aria-label="Return to timeline cover" class="w-8 h-8 flex items-center justify-center border border-[#2E45B8] rounded-full hover:bg-slate-50 transition cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#1DC9A4] focus:ring-offset-2" title="Timeline Home">
+                    <i class="fa-solid fa-house text-xs" aria-hidden="true"></i>
+                </button>
+                <button onclick="toggleModal('bib-modal', true)" aria-label="Open Bibliography" class="w-8 h-8 flex items-center justify-center border border-[#2E45B8] rounded-full hover:bg-slate-50 transition cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#1DC9A4] focus:ring-offset-2" title="Bibliography">
+                    <i class="fa-solid fa-book-open text-xs" aria-hidden="true"></i>
+                </button>
             </div>
         </div>
     </header>
@@ -66,13 +70,13 @@
                         The lead-up to the<br>US-China rivalry
                     </h1>
                     <div>
-                        <button onclick="navigateTo('timeline-view')" class="bg-[#2E45B8] hover:bg-blue-800 text-white font-bold text-sm px-12 py-3.5 rounded shadow-sm transition-colors cursor-pointer select-none">
+                        <button onclick="navigateTo('timeline-view')" aria-label="Start the interactive timeline" class="bg-[#2E45B8] hover:bg-blue-800 text-white font-bold text-sm px-12 py-3.5 rounded shadow-sm transition-colors cursor-pointer select-none focus:outline-none focus:ring-4 focus:ring-[#1DC9A4] focus:ring-offset-2">
                             Start
                         </button>
                     </div>
                 </div>
                 
-                <div class="hidden md:block absolute right-0 w-[55%] max-w-[600px] aspect-[249/192] z-10">
+                <div class="hidden md:block absolute right-0 w-[55%] max-w-[600px] aspect-[249/192] z-10" aria-hidden="true">
                     <div class="absolute inset-0">
                         <svg width="100%" height="100%" viewBox="0 0 249 192" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
                             <path d="M116.00 1.00 C 116.00 11.00, 124.00 11.00, 124.00 11.00 L 181.39 11.00 C 181.39 11.00, 193.13 11.00, 193.13 22.72 C 193.13 34.44, 183.25 33.82, 181.39 33.82 C 142.48 33.82, 98.59 33.82, 63.38 33.82 C 57.82 33.82, 46.08 35.67, 46.08 51.70 C 46.08 67.74, 59.67 68.36, 62.76 68.36 C 106.00 68.36, 154.71 68.36, 204.13 68.36 C 207.84 68.36, 229.46 68.36, 229.46 94.26 C 229.46 120.16, 204.13 120.16, 204.13 120.16 C 204.13 120.16, 97.55 120.16, 35.16 120.16 C 28.37 120.16, 1.80 122.63, 1.80 154.70 C 1.80 186.77, 27.13 190.47, 35.16 190.47 C 117.94 190.47, 248.00 191.00, 248.00 191.00" stroke="#2E45B8" stroke-width="1.5" stroke-linecap="round"/>
@@ -84,19 +88,20 @@
                             <circle cx="1" cy="154" r="2.5" fill="#2E45B8" />
                         </svg>
                     </div>
-                    <img src="ECON-INR_M1_interactive_infographic_WYA-Update.hyperesources/PastedVector-2.svg" class="absolute w-[22%] h-auto z-10" style="left: 46.58%; top: 0.52%;" alt="China Map">
-                    <img src="ECON-INR_M1_interactive_infographic_WYA-Update.hyperesources/PastedVector-3.svg" class="absolute w-[16%] h-auto z-10" style="left: 77.56%; top: 11.83%;" alt="Korean Soldier Badge">
-                    <img src="ECON-INR_M1_interactive_infographic_WYA-Update.hyperesources/PastedVector-4.svg" class="absolute w-[24%] h-auto z-10" style="left: 18.50%; top: 26.92%;" alt="Spy Plane">
-                    <img src="ECON-INR_M1_interactive_infographic_WYA-Update.hyperesources/PastedVector-5.svg" class="absolute w-[20%] h-auto z-10" style="left: 92.15%; top: 49.09%;" alt="Soviet Map">
-                    <img src="ECON-INR_M1_interactive_infographic_WYA-Update.hyperesources/PastedVector-6.svg" class="absolute w-[16%] h-auto z-10" style="left: 0.72%; top: 80.57%;" alt="Global Currency Globe">
+                    <img src="ECON-INR_M1_interactive_infographic_WYA-Update.hyperesources/PastedVector-2.svg" class="absolute w-[22%] h-auto z-10" style="left: 46.58%; top: 0.52%;" alt="">
+                    <img src="ECON-INR_M1_interactive_infographic_WYA-Update.hyperesources/PastedVector-3.svg" class="absolute w-[16%] h-auto z-10" style="left: 77.56%; top: 11.83%;" alt="">
+                    <img src="ECON-INR_M1_interactive_infographic_WYA-Update.hyperesources/PastedVector-4.svg" class="absolute w-[24%] h-auto z-10" style="left: 18.50%; top: 26.92%;" alt="">
+                    <img src="ECON-INR_M1_interactive_infographic_WYA-Update.hyperesources/PastedVector-5.svg" class="absolute w-[20%] h-auto z-10" style="left: 92.15%; top: 49.09%;" alt="">
+                    <img src="ECON-INR_M1_interactive_infographic_WYA-Update.hyperesources/PastedVector-6.svg" class="absolute w-[16%] h-auto z-10" style="left: 0.72%; top: 80.57%;" alt="">
                 </div>
             </div>
         </section>
 
-        <section id="timeline-view" class="page-view hidden max-w-6xl w-full mx-auto pt-20 sm:pt-28 flex-col min-h-screen pb-10 px-4 sm:px-10">
+        <section id="timeline-view" class="page-view hidden max-w-6xl w-full mx-auto pt-20 sm:pt-28 flex-col min-h-screen pb-10 px-4 sm:px-10" aria-live="polite">
             
             <div class="hidden md:flex flex-col flex-grow w-full">
                 <div class="flex flex-row gap-12 items-center min-h-[440px] w-full">
+                    
                     <div class="w-1/2 flex flex-col justify-center fade-transition" id="desktop-text-pane">
                         <div id="desktop-initial-prompt" class="space-y-6 max-w-lg mb-0">
                             <p class="text-[19px] text-slate-800 leading-relaxed font-light">
@@ -116,7 +121,7 @@
                         </div>
                     </div>
 
-                    <div class="w-1/2 flex justify-center items-center h-full fade-transition" id="desktop-graphic-pane">
+                    <div class="w-1/2 flex justify-center items-center h-full fade-transition" id="desktop-graphic-pane" aria-hidden="true">
                         <div id="intro-graphic-animation" class="w-full max-w-sm aspect-[4/3] relative">
                             <svg width="100%" height="100%" viewBox="0 0 400 240" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute inset-0 overflow-visible">
                                 <path id="rolling-curve" d="M 350,30 L 80,30 A 45,45 0 0,0 35,75 A 45,45 0 0,0 80,120 L 320,120 A 45,45 0 0,1 365,165 A 45,45 0 0,1 320,210 L 50,210" stroke="#E2E8F0" stroke-width="2" stroke-linecap="round"/>
@@ -147,11 +152,11 @@
                 </div>
 
                 <div class="w-full mt-auto pt-14 flex justify-center overflow-hidden pb-4">
-                    <div class="w-full max-w-5xl flex justify-center">
+                    <nav aria-label="Desktop Timeline Navigation" class="w-full max-w-5xl flex justify-center">
                         <div class="min-w-[800px] w-full relative h-16 flex items-start justify-between" id="desktop-timeline-track-container">
                             <div class="absolute left-0 right-0 h-[1.5px] bg-[#2E45B8] z-0 top-[17px]"></div>
                         </div>
-                    </div>
+                    </nav>
                 </div>
             </div>
 
@@ -165,18 +170,18 @@
                     </p>
                 </div>
 
-                <div id="mobile-accordion-container" class="relative pl-1">
-                    </div>
+                <nav aria-label="Mobile Timeline Accordion Navigation" id="mobile-accordion-container" class="relative pl-1">
+                    </nav>
             </div>
 
         </section>
     </main>
 
-    <div id="bib-modal" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+    <div id="bib-modal" role="dialog" aria-modal="true" aria-labelledby="bib-title" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center z-50 p-4">
         <div class="bg-white rounded-xl shadow-2xl max-w-3xl w-full max-h-[80vh] flex flex-col">
             <div class="p-5 border-b border-slate-100 flex items-center justify-between">
-                <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2"><i class="fa-solid fa-book text-[#e3120b]"></i> Bibliography</h3>
-                <button onclick="toggleModal('bib-modal', false)" class="text-slate-400 hover:text-slate-600 transition text-2xl p-1 cursor-pointer leading-none">&times;</button>
+                <h3 id="bib-title" class="text-lg font-bold text-slate-900 flex items-center gap-2"><i class="fa-solid fa-book text-[#e3120b]" aria-hidden="true"></i> Bibliography</h3>
+                <button onclick="toggleModal('bib-modal', false)" aria-label="Close Bibliography" class="text-slate-400 hover:text-slate-600 transition text-2xl p-1 cursor-pointer leading-none focus:outline-none focus:ring-2 focus:ring-[#1DC9A4] rounded">&times;</button>
             </div>
             <div class="p-6 overflow-y-auto custom-scrollbar space-y-4 text-sm text-slate-600 leading-relaxed" id="bibliography-target"></div>
         </div>
@@ -217,10 +222,12 @@
             milestones.forEach((m, idx) => {
                 // 1. Build Desktop Horizontal Track
                 const dNode = document.createElement('button');
-                dNode.className = "relative z-10 flex flex-col items-center group outline-none select-none cursor-pointer h-16";
+                dNode.className = "relative z-10 flex flex-col items-center group cursor-pointer h-16 focus:outline-none rounded-sm";
                 dNode.onclick = () => selectMilestone(m.id, idx);
+                dNode.setAttribute('aria-label', `Milestone ${m.id}, Year ${m.year}: ${m.title}`);
+                dNode.setAttribute('aria-pressed', 'false');
                 dNode.innerHTML = `
-                    <div id="circ-d-${m.id}" class="w-[34px] h-[34px] rounded-full border-[1.5px] border-[#2E45B8] bg-white flex items-center justify-center font-bold text-[13px] text-[#2E45B8] transition-all duration-300 group-hover:bg-[#2E45B8] group-hover:text-white">
+                    <div id="circ-d-${m.id}" class="w-[34px] h-[34px] rounded-full border-[1.5px] border-[#2E45B8] bg-white flex items-center justify-center font-bold text-[13px] text-[#2E45B8] transition-all duration-300 group-hover:bg-[#2E45B8] group-hover:text-white group-focus:ring-4 group-focus:ring-[#1DC9A4] group-focus:ring-offset-2">
                         ${m.id}
                     </div>
                     <span id="year-d-${m.id}" class="absolute top-[44px] text-[11px] font-bold text-slate-900 transition-colors whitespace-nowrap">${m.year}</span>
@@ -231,21 +238,20 @@
                 const mNode = document.createElement('div');
                 mNode.className = "relative flex flex-col mb-4 last:mb-0";
                 mNode.innerHTML = `
-                    ${idx < milestones.length - 1 ? '<div class="absolute left-[16.5px] top-[36px] bottom-[-24px] w-[1.5px] bg-[#2E45B8] z-0"></div>' : ''}
+                    ${idx < milestones.length - 1 ? '<div class="absolute left-[16.5px] top-[36px] bottom-[-24px] w-[1.5px] bg-[#2E45B8] z-0" aria-hidden="true"></div>' : ''}
                     
-                    <button class="relative z-10 flex items-start text-left w-full outline-none" onclick="selectMilestone(${m.id}, ${idx})">
-                        <div id="circ-m-${m.id}" class="shrink-0 w-[34px] h-[34px] rounded-full border-[1.5px] border-[#2E45B8] bg-white flex items-center justify-center font-bold text-[13px] text-[#2E45B8] transition-all duration-300 mt-1">
+                    <button class="relative z-10 flex items-start text-left w-full focus:outline-none group rounded-sm" onclick="selectMilestone(${m.id}, ${idx})" aria-expanded="false" aria-controls="content-m-${m.id}">
+                        <div id="circ-m-${m.id}" class="shrink-0 w-[34px] h-[34px] rounded-full border-[1.5px] border-[#2E45B8] bg-white flex items-center justify-center font-bold text-[13px] text-[#2E45B8] transition-all duration-300 mt-1 group-focus:ring-4 group-focus:ring-[#1DC9A4] group-focus:ring-offset-2">
                             ${m.id}
                         </div>
-                        
-                        <div id="short-m-${m.id}" class="ml-4 mt-1">
+                        <div id="short-m-${m.id}" class="ml-4 mt-1 group-focus:bg-slate-50 p-1 rounded transition-colors">
                             <div class="text-[17px] font-bold text-slate-900 leading-tight">${m.year}</div>
                             <div class="text-[15px] text-slate-800 mt-0.5 leading-snug pr-2">${m.title}</div>
                         </div>
                     </button>
 
-                    <div id="content-m-${m.id}" class="hidden flex-col mt-4 pl-[50px] pr-2 w-full animate-fade-in-down pb-2">
-                        <img src="ECON-INR_M1_interactive_infographic_WYA-Update.hyperesources/${m.asset}" class="w-full max-w-[280px] mx-auto object-contain mb-6 drop-shadow-sm">
+                    <div id="content-m-${m.id}" class="hidden flex-col mt-4 pl-[50px] pr-2 w-full animate-fade-in-down pb-2" role="region" aria-live="polite">
+                        <img src="ECON-INR_M1_interactive_infographic_WYA-Update.hyperesources/${m.asset}" class="w-full max-w-[280px] mx-auto object-contain mb-6 drop-shadow-sm" alt="Illustration for ${m.title}">
                         <div class="text-[2rem] font-bold text-[#E3120B] tracking-tight leading-none mb-1">${m.year}</div>
                         <h2 class="text-[22px] font-bold text-slate-900 leading-tight mb-4">${m.title}</h2>
                         <p class="text-slate-800 text-[15px] leading-relaxed text-left">${m.desc}</p>
@@ -270,45 +276,48 @@
 
             document.getElementById(id).classList.remove('hidden');
             
-            // Re-initialize home prompt states
             if(id === 'timeline-view') {
                 document.getElementById('top-nav').classList.remove('hidden');
                 
-                // Show Desktop prompts
                 document.getElementById('desktop-initial-prompt').classList.remove('hidden');
                 document.getElementById('intro-graphic-animation').classList.remove('hidden');
                 document.getElementById('desktop-event-display').classList.add('hidden');
                 document.getElementById('desktop-event-display').classList.remove('flex');
                 document.getElementById('desktop-milestone-graphic-wrapper').classList.add('hidden');
                 
-                // Show Mobile Prompts
                 document.getElementById('mobile-initial-prompt').classList.remove('hidden');
 
-                // Reset all nodes globally
-                milestones.forEach(item => {
-                    document.getElementById(`circ-d-${item.id}`).className = "w-[34px] h-[34px] rounded-full bg-white border-[1.5px] border-[#2E45B8] flex items-center justify-center font-bold text-[13px] text-[#2E45B8] transition-all duration-300 group-hover:bg-[#2E45B8] group-hover:text-white";
+                milestones.forEach((item, index) => {
+                    const dBtn = desktopTrack.children[index];
+                    dBtn.setAttribute('aria-pressed', 'false');
                     
-                    document.getElementById(`circ-m-${item.id}`).className = "shrink-0 w-[34px] h-[34px] rounded-full bg-white border-[1.5px] border-[#2E45B8] flex items-center justify-center font-bold text-[13px] text-[#2E45B8] transition-all duration-300 mt-1";
+                    document.getElementById(`circ-d-${item.id}`).className = "w-[34px] h-[34px] rounded-full bg-white border-[1.5px] border-[#2E45B8] flex items-center justify-center font-bold text-[13px] text-[#2E45B8] transition-all duration-300 group-hover:bg-[#2E45B8] group-hover:text-white group-focus:ring-4 group-focus:ring-[#1DC9A4] group-focus:ring-offset-2";
+                    
+                    document.getElementById(`circ-m-${item.id}`).className = "shrink-0 w-[34px] h-[34px] rounded-full bg-white border-[1.5px] border-[#2E45B8] flex items-center justify-center font-bold text-[13px] text-[#2E45B8] transition-all duration-300 mt-1 group-focus:ring-4 group-focus:ring-[#1DC9A4] group-focus:ring-offset-2";
                     document.getElementById(`short-m-${item.id}`).classList.remove('hidden');
                     document.getElementById(`content-m-${item.id}`).classList.add('hidden');
                     document.getElementById(`content-m-${item.id}`).classList.remove('flex');
+                    
+                    const mBtn = document.getElementById(`circ-m-${item.id}`).parentElement;
+                    mBtn.setAttribute('aria-expanded', 'false');
                 });
             }
         }
 
         function toggleModal(id, show) {
             document.getElementById(id).classList.toggle('hidden', !show);
+            if(show) {
+                document.getElementById(id).focus();
+            }
         }
 
         function selectMilestone(id, index) {
             const m = milestones.find(item => item.id === id);
             if(!m) return;
 
-            // ==========================================
-            // DESKTOP HANDLING
-            // ==========================================
             const desktopTextPane = document.getElementById('desktop-text-pane');
             const desktopGraphicPane = document.getElementById('desktop-graphic-pane');
+            const desktopTrack = document.getElementById('desktop-timeline-track-container');
 
             desktopTextPane.style.opacity = '0';
             desktopGraphicPane.style.opacity = '0';
@@ -326,42 +335,43 @@
                 document.getElementById('intro-graphic-animation').classList.add('hidden');
                 document.getElementById('desktop-milestone-graphic-wrapper').classList.remove('hidden');
                 document.getElementById('desktop-dynamic-svg-asset').src = `ECON-INR_M1_interactive_infographic_WYA-Update.hyperesources/${m.asset}`;
+                document.getElementById('desktop-dynamic-svg-asset').alt = `Illustration for ${m.title}`;
 
                 desktopTextPane.style.opacity = '1';
                 desktopGraphicPane.style.opacity = '1';
             }, 300);
 
-            // ==========================================
-            // GLOBAL NODE STYLE UPDATES
-            // ==========================================
             document.getElementById('mobile-initial-prompt').classList.add('hidden');
 
-            milestones.forEach((item) => {
-                // Desktop Updates
+            milestones.forEach((item, loopIndex) => {
                 const cd = document.getElementById(`circ-d-${item.id}`);
+                const dBtn = desktopTrack.children[loopIndex];
+                
                 if(item.id === id) {
                     cd.className = "w-[34px] h-[34px] rounded-full bg-[#1b264f] flex items-center justify-center font-bold text-[13px] text-white transition-all duration-300 ring-[2px] ring-[#1DC9A4] ring-offset-[3px]";
+                    dBtn.setAttribute('aria-pressed', 'true');
                 } else {
-                    cd.className = "w-[34px] h-[34px] rounded-full bg-white border-[1.5px] border-[#2E45B8] flex items-center justify-center font-bold text-[13px] text-[#2E45B8] transition-all duration-300 group-hover:bg-[#2E45B8] group-hover:text-white";
+                    cd.className = "w-[34px] h-[34px] rounded-full bg-white border-[1.5px] border-[#2E45B8] flex items-center justify-center font-bold text-[13px] text-[#2E45B8] transition-all duration-300 group-hover:bg-[#2E45B8] group-hover:text-white group-focus:ring-4 group-focus:ring-[#1DC9A4] group-focus:ring-offset-2";
+                    dBtn.setAttribute('aria-pressed', 'false');
                 }
 
-                // Mobile Accordion Updates
                 const cm = document.getElementById(`circ-m-${item.id}`);
                 const sm = document.getElementById(`short-m-${item.id}`);
                 const contentM = document.getElementById(`content-m-${item.id}`);
+                const mBtn = cm.parentElement;
 
                 if(item.id === id) {
-                    // Mobile Active Item
                     cm.className = "shrink-0 w-[34px] h-[34px] rounded-full bg-[#1b264f] flex items-center justify-center font-bold text-[13px] text-white shadow-md transition-all duration-300 ring-[2px] ring-[#1DC9A4] ring-offset-[3px] mt-1";
                     sm.classList.add('hidden');
                     contentM.classList.remove('hidden');
                     contentM.classList.add('flex');
+                    mBtn.setAttribute('aria-expanded', 'true');
                 } else {
-                    // Mobile Inactive Item
-                    cm.className = "shrink-0 w-[34px] h-[34px] rounded-full bg-white border-[1.5px] border-[#2E45B8] flex items-center justify-center font-bold text-[13px] text-[#2E45B8] transition-all duration-300 mt-1";
+                    cm.className = "shrink-0 w-[34px] h-[34px] rounded-full bg-white border-[1.5px] border-[#2E45B8] flex items-center justify-center font-bold text-[13px] text-[#2E45B8] transition-all duration-300 mt-1 group-focus:ring-4 group-focus:ring-[#1DC9A4] group-focus:ring-offset-2";
                     sm.classList.remove('hidden');
                     contentM.classList.add('hidden');
                     contentM.classList.remove('flex');
+                    mBtn.setAttribute('aria-expanded', 'false');
                 }
             });
         }
