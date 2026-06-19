@@ -47,10 +47,10 @@
             </div>
             
             <div class="flex items-center space-x-2 sm:space-x-3 text-[#2E45B8]">
-                <button onclick="navigateTo('cover-view')" aria-label="Return to timeline cover" class="w-8 h-8 flex items-center justify-center border border-[#2E45B8] rounded-full hover:bg-slate-50 transition cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#1DC9A4] focus:ring-offset-2" title="Timeline Home">
+                <button onclick="navigateTo('cover-view')" aria-label="Return to cover page" class="w-8 h-8 flex items-center justify-center border border-[#2E45B8] rounded-full hover:bg-slate-50 transition cursor-pointer focus:outline-none focus-visible:ring-4 focus-visible:ring-[#1DC9A4] focus-visible:ring-offset-2">
                     <i class="fa-solid fa-house text-xs" aria-hidden="true"></i>
                 </button>
-                <button onclick="toggleModal('bib-modal', true)" aria-label="Open Bibliography" class="w-8 h-8 flex items-center justify-center border border-[#2E45B8] rounded-full hover:bg-slate-50 transition cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#1DC9A4] focus:ring-offset-2" title="Bibliography">
+                <button onclick="toggleModal('bib-modal', true)" aria-label="Open Bibliography" class="w-8 h-8 flex items-center justify-center border border-[#2E45B8] rounded-full hover:bg-slate-50 transition cursor-pointer focus:outline-none focus-visible:ring-4 focus-visible:ring-[#1DC9A4] focus-visible:ring-offset-2">
                     <i class="fa-solid fa-book-open text-xs" aria-hidden="true"></i>
                 </button>
             </div>
@@ -66,11 +66,11 @@
 
             <div class="w-full flex flex-col md:flex-row items-center relative z-10 mt-12">
                 <div class="w-full md:w-1/2 space-y-8 pr-0 md:pr-4 z-20">
-                    <h1 class="text-[40px] sm:text-[48px] font-bold text-slate-900 leading-[1.1] tracking-tight">
+                    <h1 tabindex="-1" id="cover-heading" class="text-[40px] sm:text-[48px] font-bold text-slate-900 leading-[1.1] tracking-tight focus:outline-none">
                         The lead-up to the<br>US-China rivalry
                     </h1>
                     <div>
-                        <button onclick="navigateTo('timeline-view')" aria-label="Start the interactive timeline" class="bg-[#2E45B8] hover:bg-blue-800 text-white font-bold text-sm px-12 py-3.5 rounded shadow-sm transition-colors cursor-pointer select-none focus:outline-none focus:ring-4 focus:ring-[#1DC9A4] focus:ring-offset-2">
+                        <button onclick="navigateTo('timeline-view')" aria-label="Start the interactive timeline" class="bg-[#2E45B8] hover:bg-blue-800 text-white font-bold text-sm px-12 py-3.5 rounded shadow-sm transition-colors cursor-pointer select-none focus:outline-none focus-visible:ring-4 focus-visible:ring-[#1DC9A4] focus-visible:ring-offset-2">
                             Start
                         </button>
                     </div>
@@ -99,81 +99,83 @@
 
         <section id="timeline-view" class="page-view hidden max-w-6xl w-full mx-auto pt-20 sm:pt-28 flex-col min-h-screen pb-10 px-4 sm:px-10" aria-live="polite">
             
-            <div class="hidden md:flex flex-col flex-grow w-full">
-                <div class="flex flex-row gap-12 items-center min-h-[440px] w-full">
-                    
-                    <div class="w-1/2 flex flex-col justify-center fade-transition" id="desktop-text-pane">
-                        <div id="desktop-initial-prompt" class="space-y-6 max-w-lg mb-0">
-                            <p class="text-[19px] text-slate-800 leading-relaxed font-light">
-                                In the preceding decades, various events occurred that culminated in the US-China rivalry.
-                            </p>
-                            <p class="text-[19px] text-slate-800 leading-relaxed font-light">
-                                To understand how the rivalry reached its current state, <strong class="font-bold">click on each event</strong> in the timeline below.
-                            </p>
-                        </div>
+            <div id="timeline-focus-target" tabindex="-1" class="outline-none w-full">
+            
+                <div class="hidden md:flex flex-col flex-grow w-full">
+                    <div class="flex flex-row gap-12 items-center min-h-[440px] w-full">
                         
-                        <div id="desktop-event-display" class="hidden flex-col space-y-6 w-full">
-                            <div class="flex flex-row items-baseline space-x-4">
-                                <span id="desktop-event-year" class="text-[2.75rem] font-bold text-[#E3120B] tracking-tight leading-none"></span>
-                                <h2 id="desktop-event-title" class="text-2xl font-bold text-slate-900 leading-tight"></h2>
+                        <div class="w-1/2 flex flex-col justify-center fade-transition" id="desktop-text-pane">
+                            <div id="desktop-initial-prompt" class="space-y-6 max-w-lg mb-0">
+                                <p class="text-[19px] text-slate-800 leading-relaxed font-light">
+                                    In the preceding decades, various events occurred that culminated in the US-China rivalry.
+                                </p>
+                                <p class="text-[19px] text-slate-800 leading-relaxed font-light">
+                                    To understand how the rivalry reached its current state, <strong class="font-bold">click on each event</strong> in the timeline below.
+                                </p>
                             </div>
-                            <p id="desktop-event-description" class="text-slate-800 text-[15px] leading-relaxed max-h-[340px] overflow-y-auto custom-scrollbar pr-4 text-justify w-full"></p>
+                            
+                            <div id="desktop-event-display" class="hidden flex-col space-y-6 w-full">
+                                <div class="flex flex-row items-baseline space-x-4">
+                                    <span id="desktop-event-year" class="text-[2.75rem] font-bold text-[#E3120B] tracking-tight leading-none"></span>
+                                    <h2 id="desktop-event-title" class="text-2xl font-bold text-slate-900 leading-tight"></h2>
+                                </div>
+                                <div id="desktop-event-description" tabindex="0" aria-label="Event details" class="text-slate-800 text-[15px] leading-relaxed max-h-[340px] overflow-y-auto custom-scrollbar pr-4 text-justify w-full focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2E45B8] focus-visible:ring-inset rounded"></div>
+                            </div>
+                        </div>
+
+                        <div class="w-1/2 flex justify-center items-center h-full fade-transition" id="desktop-graphic-pane" aria-hidden="true">
+                            <div id="intro-graphic-animation" class="w-full max-w-sm aspect-[4/3] relative">
+                                <svg width="100%" height="100%" viewBox="0 0 400 240" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute inset-0 overflow-visible">
+                                    <path id="rolling-curve" d="M 350,30 L 80,30 A 45,45 0 0,0 35,75 A 45,45 0 0,0 80,120 L 320,120 A 45,45 0 0,1 365,165 A 45,45 0 0,1 320,210 L 50,210" stroke="#E2E8F0" stroke-width="2" stroke-linecap="round"/>
+                                    <path d="M 350,30 L 80,30 A 45,45 0 0,0 35,75 A 45,45 0 0,0 80,120 L 320,120 A 45,45 0 0,1 365,165 A 45,45 0 0,1 320,210 L 50,210" stroke="#2E45B8" stroke-width="2" stroke-linecap="round" stroke-dasharray="1500" stroke-dashoffset="1500">
+                                        <animate attributeName="stroke-dashoffset" from="1500" to="0" dur="2.5s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" keyTimes="0; 1"/>
+                                    </path>
+                                    <path d="M 58,205 L 50,210 L 58,215" stroke="#2E45B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="20" stroke-dashoffset="20">
+                                        <animate attributeName="stroke-dashoffset" from="20" to="0" dur="0.2s" begin="2.3s" fill="freeze"/>
+                                    </path>
+                                    <circle cx="280" cy="30" r="3.5" fill="#2E45B8" class="opacity-0"><animate attributeName="opacity" to="1" dur="0.2s" begin="0.2s" fill="freeze"/></circle>
+                                    <circle cx="120" cy="30" r="3.5" fill="#2E45B8" class="opacity-0"><animate attributeName="opacity" to="1" dur="0.2s" begin="0.6s" fill="freeze"/></circle>
+                                    <circle cx="35" cy="75" r="3.5" fill="#2E45B8" class="opacity-0"><animate attributeName="opacity" to="1" dur="0.2s" begin="0.9s" fill="freeze"/></circle>
+                                    <circle cx="160" cy="120" r="3.5" fill="#2E45B8" class="opacity-0"><animate attributeName="opacity" to="1" dur="0.2s" begin="1.3s" fill="freeze"/></circle>
+                                    <circle cx="280" cy="120" r="3.5" fill="#2E45B8" class="opacity-0"><animate attributeName="opacity" to="1" dur="0.2s" begin="1.6s" fill="freeze"/></circle>
+                                    <circle cx="365" cy="165" r="3.5" fill="#2E45B8" class="opacity-0"><animate attributeName="opacity" to="1" dur="0.2s" begin="1.9s" fill="freeze"/></circle>
+                                    <circle cx="200" cy="210" r="3.5" fill="#2E45B8" class="opacity-0"><animate attributeName="opacity" to="1" dur="0.2s" begin="2.2s" fill="freeze"/></circle>
+                                    <circle r="6" fill="#1b264f" class="drop-shadow-sm">
+                                        <animateMotion dur="2.5s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" keyTimes="0; 1">
+                                            <mpath href="#rolling-curve"/>
+                                        </animateMotion>
+                                    </circle>
+                                </svg>
+                            </div>
+                            <div id="desktop-milestone-graphic-wrapper" class="hidden w-full max-w-xs aspect-square flex-col items-center justify-center relative mx-auto">
+                                <img id="desktop-dynamic-svg-asset" src="" class="w-full h-full object-contain" alt="Milestone Visual Asset">
+                            </div>
                         </div>
                     </div>
 
-                    <div class="w-1/2 flex justify-center items-center h-full fade-transition" id="desktop-graphic-pane" aria-hidden="true">
-                        <div id="intro-graphic-animation" class="w-full max-w-sm aspect-[4/3] relative">
-                            <svg width="100%" height="100%" viewBox="0 0 400 240" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute inset-0 overflow-visible">
-                                <path id="rolling-curve" d="M 350,30 L 80,30 A 45,45 0 0,0 35,75 A 45,45 0 0,0 80,120 L 320,120 A 45,45 0 0,1 365,165 A 45,45 0 0,1 320,210 L 50,210" stroke="#E2E8F0" stroke-width="2" stroke-linecap="round"/>
-                                <path d="M 350,30 L 80,30 A 45,45 0 0,0 35,75 A 45,45 0 0,0 80,120 L 320,120 A 45,45 0 0,1 365,165 A 45,45 0 0,1 320,210 L 50,210" stroke="#2E45B8" stroke-width="2" stroke-linecap="round" stroke-dasharray="1500" stroke-dashoffset="1500">
-                                    <animate attributeName="stroke-dashoffset" from="1500" to="0" dur="2.5s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" keyTimes="0; 1"/>
-                                </path>
-                                <path d="M 58,205 L 50,210 L 58,215" stroke="#2E45B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="20" stroke-dashoffset="20">
-                                    <animate attributeName="stroke-dashoffset" from="20" to="0" dur="0.2s" begin="2.3s" fill="freeze"/>
-                                </path>
-                                <circle cx="280" cy="30" r="3.5" fill="#2E45B8" class="opacity-0"><animate attributeName="opacity" to="1" dur="0.2s" begin="0.2s" fill="freeze"/></circle>
-                                <circle cx="120" cy="30" r="3.5" fill="#2E45B8" class="opacity-0"><animate attributeName="opacity" to="1" dur="0.2s" begin="0.6s" fill="freeze"/></circle>
-                                <circle cx="35" cy="75" r="3.5" fill="#2E45B8" class="opacity-0"><animate attributeName="opacity" to="1" dur="0.2s" begin="0.9s" fill="freeze"/></circle>
-                                <circle cx="160" cy="120" r="3.5" fill="#2E45B8" class="opacity-0"><animate attributeName="opacity" to="1" dur="0.2s" begin="1.3s" fill="freeze"/></circle>
-                                <circle cx="280" cy="120" r="3.5" fill="#2E45B8" class="opacity-0"><animate attributeName="opacity" to="1" dur="0.2s" begin="1.6s" fill="freeze"/></circle>
-                                <circle cx="365" cy="165" r="3.5" fill="#2E45B8" class="opacity-0"><animate attributeName="opacity" to="1" dur="0.2s" begin="1.9s" fill="freeze"/></circle>
-                                <circle cx="200" cy="210" r="3.5" fill="#2E45B8" class="opacity-0"><animate attributeName="opacity" to="1" dur="0.2s" begin="2.2s" fill="freeze"/></circle>
-                                <circle r="6" fill="#1b264f" class="drop-shadow-sm">
-                                    <animateMotion dur="2.5s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" keyTimes="0; 1">
-                                        <mpath href="#rolling-curve"/>
-                                    </animateMotion>
-                                </circle>
-                            </svg>
-                        </div>
-                        <div id="desktop-milestone-graphic-wrapper" class="hidden w-full max-w-xs aspect-square flex-col items-center justify-center relative mx-auto">
-                            <img id="desktop-dynamic-svg-asset" src="" class="w-full h-full object-contain" alt="Milestone Visual Asset">
-                        </div>
+                    <div class="w-full mt-auto pt-14 flex justify-center overflow-hidden pb-4">
+                        <nav aria-label="Desktop Timeline Navigation" class="w-full max-w-5xl flex justify-center">
+                            <div class="min-w-[800px] w-full relative h-16 flex items-start justify-between" id="desktop-timeline-track-container">
+                                <div class="absolute left-0 right-0 h-[1.5px] bg-[#2E45B8] z-0 top-[17px]"></div>
+                            </div>
+                        </nav>
                     </div>
                 </div>
 
-                <div class="w-full mt-auto pt-14 flex justify-center overflow-hidden pb-4">
-                    <nav aria-label="Desktop Timeline Navigation" class="w-full max-w-5xl flex justify-center">
-                        <div class="min-w-[800px] w-full relative h-16 flex items-start justify-between" id="desktop-timeline-track-container">
-                            <div class="absolute left-0 right-0 h-[1.5px] bg-[#2E45B8] z-0 top-[17px]"></div>
-                        </div>
-                    </nav>
+                <div class="md:hidden flex flex-col w-full pb-12">
+                    <div id="mobile-initial-prompt" class="space-y-4 mb-8">
+                        <p class="text-[17px] text-slate-800 leading-relaxed font-light">
+                            In the preceding decades, various events occurred that culminated in the US-China rivalry.
+                        </p>
+                        <p class="text-[17px] text-slate-800 leading-relaxed font-light">
+                            To understand how the rivalry reached its current state, <strong class="font-bold">click on each event</strong> in the timeline below.
+                        </p>
+                    </div>
+
+                    <nav aria-label="Mobile Timeline Navigation" id="mobile-accordion-container" class="relative pl-1">
+                        </nav>
                 </div>
             </div>
-
-            <div class="md:hidden flex flex-col w-full pb-12">
-                <div id="mobile-initial-prompt" class="space-y-4 mb-8">
-                    <p class="text-[17px] text-slate-800 leading-relaxed font-light">
-                        In the preceding decades, various events occurred that culminated in the US-China rivalry.
-                    </p>
-                    <p class="text-[17px] text-slate-800 leading-relaxed font-light">
-                        To understand how the rivalry reached its current state, <strong class="font-bold">click on each event</strong> in the timeline below.
-                    </p>
-                </div>
-
-                <nav aria-label="Mobile Timeline Accordion Navigation" id="mobile-accordion-container" class="relative pl-1">
-                    </nav>
-            </div>
-
         </section>
     </main>
 
@@ -181,9 +183,9 @@
         <div class="bg-white rounded-xl shadow-2xl max-w-3xl w-full max-h-[80vh] flex flex-col">
             <div class="p-5 border-b border-slate-100 flex items-center justify-between">
                 <h3 id="bib-title" class="text-lg font-bold text-slate-900 flex items-center gap-2"><i class="fa-solid fa-book text-[#e3120b]" aria-hidden="true"></i> Bibliography</h3>
-                <button onclick="toggleModal('bib-modal', false)" aria-label="Close Bibliography" class="text-slate-400 hover:text-slate-600 transition text-2xl p-1 cursor-pointer leading-none focus:outline-none focus:ring-2 focus:ring-[#1DC9A4] rounded">&times;</button>
+                <button onclick="toggleModal('bib-modal', false)" aria-label="Close Bibliography" class="text-slate-400 hover:text-slate-600 transition text-2xl p-1 cursor-pointer leading-none focus:outline-none focus-visible:ring-4 focus-visible:ring-[#1DC9A4] rounded">&times;</button>
             </div>
-            <div class="p-6 overflow-y-auto custom-scrollbar space-y-4 text-sm text-slate-600 leading-relaxed" id="bibliography-target"></div>
+            <div class="p-6 overflow-y-auto custom-scrollbar space-y-4 text-sm text-slate-600 leading-relaxed" id="bibliography-target" tabindex="0" aria-label="Bibliography content"></div>
         </div>
     </div>
 
@@ -222,12 +224,12 @@
             milestones.forEach((m, idx) => {
                 // 1. Build Desktop Horizontal Track
                 const dNode = document.createElement('button');
-                dNode.className = "relative z-10 flex flex-col items-center group cursor-pointer h-16 focus:outline-none rounded-sm";
+                dNode.className = "relative z-10 flex flex-col items-center cursor-pointer h-16 w-10 rounded focus:outline-none focus-visible:ring-4 focus-visible:ring-[#1DC9A4] focus-visible:ring-offset-2";
                 dNode.onclick = () => selectMilestone(m.id, idx);
                 dNode.setAttribute('aria-label', `Milestone ${m.id}, Year ${m.year}: ${m.title}`);
                 dNode.setAttribute('aria-pressed', 'false');
                 dNode.innerHTML = `
-                    <div id="circ-d-${m.id}" class="w-[34px] h-[34px] rounded-full border-[1.5px] border-[#2E45B8] bg-white flex items-center justify-center font-bold text-[13px] text-[#2E45B8] transition-all duration-300 group-hover:bg-[#2E45B8] group-hover:text-white group-focus:ring-4 group-focus:ring-[#1DC9A4] group-focus:ring-offset-2">
+                    <div id="circ-d-${m.id}" class="w-[34px] h-[34px] rounded-full border-[1.5px] border-[#2E45B8] bg-white flex items-center justify-center font-bold text-[13px] text-[#2E45B8] transition-all duration-300 hover:bg-[#2E45B8] hover:text-white">
                         ${m.id}
                     </div>
                     <span id="year-d-${m.id}" class="absolute top-[44px] text-[11px] font-bold text-slate-900 transition-colors whitespace-nowrap">${m.year}</span>
@@ -240,17 +242,17 @@
                 mNode.innerHTML = `
                     ${idx < milestones.length - 1 ? '<div class="absolute left-[16.5px] top-[36px] bottom-[-24px] w-[1.5px] bg-[#2E45B8] z-0" aria-hidden="true"></div>' : ''}
                     
-                    <button class="relative z-10 flex items-start text-left w-full focus:outline-none group rounded-sm" onclick="selectMilestone(${m.id}, ${idx})" aria-expanded="false" aria-controls="content-m-${m.id}">
-                        <div id="circ-m-${m.id}" class="shrink-0 w-[34px] h-[34px] rounded-full border-[1.5px] border-[#2E45B8] bg-white flex items-center justify-center font-bold text-[13px] text-[#2E45B8] transition-all duration-300 mt-1 group-focus:ring-4 group-focus:ring-[#1DC9A4] group-focus:ring-offset-2">
+                    <button class="relative z-10 flex items-start text-left w-full focus:outline-none focus-visible:ring-4 focus-visible:ring-[#1DC9A4] focus-visible:ring-offset-2 rounded" onclick="selectMilestone(${m.id}, ${idx})" aria-expanded="false" aria-controls="content-m-${m.id}">
+                        <div id="circ-m-${m.id}" class="shrink-0 w-[34px] h-[34px] rounded-full border-[1.5px] border-[#2E45B8] bg-white flex items-center justify-center font-bold text-[13px] text-[#2E45B8] transition-all duration-300 mt-1">
                             ${m.id}
                         </div>
-                        <div id="short-m-${m.id}" class="ml-4 mt-1 group-focus:bg-slate-50 p-1 rounded transition-colors">
+                        <div id="short-m-${m.id}" class="ml-4 mt-1 hover:bg-slate-50 p-1 rounded transition-colors">
                             <div class="text-[17px] font-bold text-slate-900 leading-tight">${m.year}</div>
                             <div class="text-[15px] text-slate-800 mt-0.5 leading-snug pr-2">${m.title}</div>
                         </div>
                     </button>
 
-                    <div id="content-m-${m.id}" class="hidden flex-col mt-4 pl-[50px] pr-2 w-full animate-fade-in-down pb-2" role="region" aria-live="polite">
+                    <div id="content-m-${m.id}" class="hidden flex-col mt-4 pl-[50px] pr-2 w-full animate-fade-in-down pb-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2E45B8] focus-visible:ring-inset rounded" role="region" aria-live="polite" tabindex="0" aria-label="Details for ${m.year}">
                         <img src="ECON-INR_M1_interactive_infographic_WYA-Update.hyperesources/${m.asset}" class="w-full max-w-[280px] mx-auto object-contain mb-6 drop-shadow-sm" alt="Illustration for ${m.title}">
                         <div class="text-[2rem] font-bold text-[#E3120B] tracking-tight leading-none mb-1">${m.year}</div>
                         <h2 class="text-[22px] font-bold text-slate-900 leading-tight mb-4">${m.title}</h2>
@@ -276,24 +278,28 @@
 
             document.getElementById(id).classList.remove('hidden');
             
+            // Re-initialize home prompt states
             if(id === 'timeline-view') {
                 document.getElementById('top-nav').classList.remove('hidden');
                 
+                // Show Desktop prompts
                 document.getElementById('desktop-initial-prompt').classList.remove('hidden');
                 document.getElementById('intro-graphic-animation').classList.remove('hidden');
                 document.getElementById('desktop-event-display').classList.add('hidden');
                 document.getElementById('desktop-event-display').classList.remove('flex');
                 document.getElementById('desktop-milestone-graphic-wrapper').classList.add('hidden');
                 
+                // Show Mobile Prompts
                 document.getElementById('mobile-initial-prompt').classList.remove('hidden');
 
+                // Reset all nodes globally
                 milestones.forEach((item, index) => {
                     const dBtn = desktopTrack.children[index];
                     dBtn.setAttribute('aria-pressed', 'false');
                     
-                    document.getElementById(`circ-d-${item.id}`).className = "w-[34px] h-[34px] rounded-full bg-white border-[1.5px] border-[#2E45B8] flex items-center justify-center font-bold text-[13px] text-[#2E45B8] transition-all duration-300 group-hover:bg-[#2E45B8] group-hover:text-white group-focus:ring-4 group-focus:ring-[#1DC9A4] group-focus:ring-offset-2";
+                    document.getElementById(`circ-d-${item.id}`).className = "w-[34px] h-[34px] rounded-full bg-white border-[1.5px] border-[#2E45B8] flex items-center justify-center font-bold text-[13px] text-[#2E45B8] transition-all duration-300 hover:bg-[#2E45B8] hover:text-white";
                     
-                    document.getElementById(`circ-m-${item.id}`).className = "shrink-0 w-[34px] h-[34px] rounded-full bg-white border-[1.5px] border-[#2E45B8] flex items-center justify-center font-bold text-[13px] text-[#2E45B8] transition-all duration-300 mt-1 group-focus:ring-4 group-focus:ring-[#1DC9A4] group-focus:ring-offset-2";
+                    document.getElementById(`circ-m-${item.id}`).className = "shrink-0 w-[34px] h-[34px] rounded-full bg-white border-[1.5px] border-[#2E45B8] flex items-center justify-center font-bold text-[13px] text-[#2E45B8] transition-all duration-300 mt-1";
                     document.getElementById(`short-m-${item.id}`).classList.remove('hidden');
                     document.getElementById(`content-m-${item.id}`).classList.add('hidden');
                     document.getElementById(`content-m-${item.id}`).classList.remove('flex');
@@ -301,6 +307,11 @@
                     const mBtn = document.getElementById(`circ-m-${item.id}`).parentElement;
                     mBtn.setAttribute('aria-expanded', 'false');
                 });
+                
+                // Programmatic Focus Shifting
+                setTimeout(() => document.getElementById('timeline-focus-target').focus(), 100);
+            } else if (id === 'cover-view') {
+                 setTimeout(() => document.getElementById('cover-heading').focus(), 100);
             }
         }
 
@@ -315,6 +326,9 @@
             const m = milestones.find(item => item.id === id);
             if(!m) return;
 
+            // ==========================================
+            // DESKTOP HANDLING
+            // ==========================================
             const desktopTextPane = document.getElementById('desktop-text-pane');
             const desktopGraphicPane = document.getElementById('desktop-graphic-pane');
             const desktopTrack = document.getElementById('desktop-timeline-track-container');
@@ -341,9 +355,13 @@
                 desktopGraphicPane.style.opacity = '1';
             }, 300);
 
+            // ==========================================
+            // GLOBAL NODE STYLE UPDATES
+            // ==========================================
             document.getElementById('mobile-initial-prompt').classList.add('hidden');
 
             milestones.forEach((item, loopIndex) => {
+                // Desktop Updates
                 const cd = document.getElementById(`circ-d-${item.id}`);
                 const dBtn = desktopTrack.children[loopIndex];
                 
@@ -351,23 +369,26 @@
                     cd.className = "w-[34px] h-[34px] rounded-full bg-[#1b264f] flex items-center justify-center font-bold text-[13px] text-white transition-all duration-300 ring-[2px] ring-[#1DC9A4] ring-offset-[3px]";
                     dBtn.setAttribute('aria-pressed', 'true');
                 } else {
-                    cd.className = "w-[34px] h-[34px] rounded-full bg-white border-[1.5px] border-[#2E45B8] flex items-center justify-center font-bold text-[13px] text-[#2E45B8] transition-all duration-300 group-hover:bg-[#2E45B8] group-hover:text-white group-focus:ring-4 group-focus:ring-[#1DC9A4] group-focus:ring-offset-2";
+                    cd.className = "w-[34px] h-[34px] rounded-full bg-white border-[1.5px] border-[#2E45B8] flex items-center justify-center font-bold text-[13px] text-[#2E45B8] transition-all duration-300 hover:bg-[#2E45B8] hover:text-white";
                     dBtn.setAttribute('aria-pressed', 'false');
                 }
 
+                // Mobile Accordion Updates
                 const cm = document.getElementById(`circ-m-${item.id}`);
                 const sm = document.getElementById(`short-m-${item.id}`);
                 const contentM = document.getElementById(`content-m-${item.id}`);
                 const mBtn = cm.parentElement;
 
                 if(item.id === id) {
+                    // Mobile Active Item
                     cm.className = "shrink-0 w-[34px] h-[34px] rounded-full bg-[#1b264f] flex items-center justify-center font-bold text-[13px] text-white shadow-md transition-all duration-300 ring-[2px] ring-[#1DC9A4] ring-offset-[3px] mt-1";
                     sm.classList.add('hidden');
                     contentM.classList.remove('hidden');
                     contentM.classList.add('flex');
                     mBtn.setAttribute('aria-expanded', 'true');
                 } else {
-                    cm.className = "shrink-0 w-[34px] h-[34px] rounded-full bg-white border-[1.5px] border-[#2E45B8] flex items-center justify-center font-bold text-[13px] text-[#2E45B8] transition-all duration-300 mt-1 group-focus:ring-4 group-focus:ring-[#1DC9A4] group-focus:ring-offset-2";
+                    // Mobile Inactive Item
+                    cm.className = "shrink-0 w-[34px] h-[34px] rounded-full bg-white border-[1.5px] border-[#2E45B8] flex items-center justify-center font-bold text-[13px] text-[#2E45B8] transition-all duration-300 mt-1";
                     sm.classList.remove('hidden');
                     contentM.classList.add('hidden');
                     contentM.classList.remove('flex');
